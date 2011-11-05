@@ -1,0 +1,30 @@
+<section id="left">
+<article>
+<h3>Átlagszámolás</h3>
+
+<table>
+  <tr>
+    <th>Név</th>
+    <th>Kredit</th>
+    <th>Érdemjegy</th>
+  </tr>
+<% @subjects.each do |subject| %>
+  <tr>
+    <td class="first-col"><%= subject.name %></td>
+    <td class="credit-col"><%= subject.credit %></td>
+    <td>
+		<select>
+			<option>1</option>
+			<option>2</option>
+			<option>3</option>
+			<option>4</option>
+			<option>5</option>
+		</select>
+	</td>
+  </tr>
+<% end %>
+
+</table>
+
+</article>
+</section>

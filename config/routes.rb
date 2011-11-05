@@ -1,4 +1,6 @@
 RoRhf::Application.routes.draw do
+  get "average/index"
+
   resources :oraks
 
   match 'user/edit' => 'users#edit', :as => :edit_current_user
