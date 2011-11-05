@@ -11,6 +11,8 @@ RoRhf::Application.routes.draw do
 
   match 'login' => 'sessions#new', :as => :login
 
+  match 'szamol' => 'average#szamol'
+
   resources :sessions
 
   resources :users

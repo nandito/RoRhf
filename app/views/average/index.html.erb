@@ -38,15 +38,26 @@
 	<th>Ösztöndíj index</th>
 </tr>
 <tr>
-	<td>2</td>
-	<td>3</td>
-	<td>4</td>
-	<td>5</td>
-	<td>6</td>
+	<td><%= @kreditek %></td>
+	<td>x</td>
+	<td>x</td>
+	<td>x</td>
+	<td>x</td>
 </tr>
 
 </table>
 
+</div>
+<div>
+<%= form_tag('/szamol') do %>
+	<%= select_tag(:f, options_for_select([['1',1],['2',2],['3',3],['4',4], ['5',5]])) %>
+	<%= label_tag(:f, "First") %><br />
+	<%= text_field_tag(:s) %>
+	<%= label_tag(:s, "Second") %><br />
+	<%= text_field_tag(:r, @result, :disabled => true) %>
+
+	<%= submit_tag("Számold") %>
+<% end %>
 </div>
 
 </article>
