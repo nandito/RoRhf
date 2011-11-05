@@ -10,7 +10,25 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20111024152942) do
+ActiveRecord::Schema.define(:version => 20111105134610) do
+
+  create_table "oraks", :force => true do |t|
+    t.string   "evad"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.string   "photo_file_name"
+    t.string   "photo_content_type"
+    t.integer  "photo_file_size"
+  end
+
+  create_table "orarends", :force => true do |t|
+    t.string   "felev"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.string   "photo_file_name"
+    t.string   "photo_content_type"
+    t.integer  "photo_file_size"
+  end
 
   create_table "subjects", :force => true do |t|
     t.string   "name"
@@ -18,6 +36,21 @@ ActiveRecord::Schema.define(:version => 20111024152942) do
     t.integer  "credit"
     t.datetime "created_at"
     t.datetime "updated_at"
+  end
+
+  create_table "time_tables", :force => true do |t|
+    t.string   "season"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "timetables", :force => true do |t|
+    t.string   "season"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.string   "photo_file_name"
+    t.string   "photo_content_type"
+    t.integer  "photo_file_size"
   end
 
   create_table "users", :force => true do |t|

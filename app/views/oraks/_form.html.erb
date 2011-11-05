@@ -1,0 +1,25 @@
+<%= form_for(@orak) do |f| %>
+  <% if @orak.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@orak.errors.count, "error") %> prohibited this orak from being saved:</h2>
+
+      <ul>
+      <% @orak.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :evad %><br />
+    <%= f.text_field :evad %>
+  </div>
+  <div class="field">
+	<%= f.label 'Photo' %><br />
+	<%= f.file_field :photo %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

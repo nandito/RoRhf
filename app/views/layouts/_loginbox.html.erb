@@ -1,0 +1,25 @@
+<article class="login">
+		<div class="title">
+			<h3>bejelentkezés</h3>
+		</div>
+		<% if @user = current_user %>
+  		   <span class="loggedin-label">Bejelentkezve:</span><span class="loggedin-name"><%= current_user.username %></span>
+		  <%= link_to "adatok módosítása", "/user/edit", :class => "profile-modify" %>
+		   <%= link_to "kijelentkezés", logout_path, :class => "logout-l" %>
+		<% else %>
+			<div id="form">
+			<%= form_tag sessions_path do %>
+			  
+			    <%= label_tag :login, "felhasználónév:", :class => "name-label" %>
+			    <%= text_field_tag :login, params[:login], :id => "name" %>
+			  
+			    <%= label_tag :password, "jelszó:", :class => "pass-label"  %>
+			    <%= password_field_tag :password, "", :id => "password" %>
+			  
+			    <%= link_to "Regisztráció", signup_path, :class => "forgotten-pass" %>
+			  <p><%= submit_tag "ok", :id => "login-ok" %></p>
+			<% end %>
+			<img src="/assets/lakat.png" class="lock">			
+			</div>
+		<% end %>
+	</article>

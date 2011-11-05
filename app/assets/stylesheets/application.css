@@ -129,7 +129,7 @@ nav ul li a:hover, nav ul li .active{
 	font-weight: bold;
 	position: relative;
 }
-.name-label, .pass-label{
+.name-label, .pass-label, .loggedin-label{
 	display: inline-block;
 	padding-left: 8px;
 }
@@ -139,6 +139,14 @@ nav ul li a:hover, nav ul li .active{
 .pass-label{
 	padding-right: 61px;
 }
+.loggedin-label, .loggedin-name{
+	padding-top: 20px;	
+	font-size: 13px;
+	font-weight: bold;
+}
+.loggedin-name{
+	padding-left: 50px;
+}
 #name, #password{
 	padding: 1px;
 	margin: 0 0 15px 0;
@@ -146,18 +154,27 @@ nav ul li a:hover, nav ul li .active{
 	width: 124px;
 }
 .forgotten-pass{
-	display: block;
 	padding: 0 0 10px 8px;
+}
+.profile-modify{
+	padding: 5px 0 5px 8px;
+}
+.logout-l{
+	padding: 5px 0 20px 8px;
+}
+.forgotten-pass, .profile-modify, .logout-l{
+	display: block;
 	text-decoration: none;
 	color: #a64100;
 }
-.forgotten-pass:before{
+
+.forgotten-pass:before, .profile-modify:before, .logout-l:before{
 	content: '[';
 }
-.forgotten-pass:after{
+.forgotten-pass:after, .profile-modify:after, .logout-l:after{
 	content: ']'
 }
-.forgotten-pass:hover{
+.forgotten-pass:hover, .profile-modify:hover, .logout-l:hover{
 	color: #c85211;
 }
 #login-ok{
@@ -223,6 +240,9 @@ nav ul li a:hover, nav ul li .active{
 }
 .error-msg{
 	max-width: 500px;
+}
+.jegymezo{
+	width: 20px;
 }
 
 /* footer */

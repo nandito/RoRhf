@@ -1,0 +1,14 @@
+<section id="left">
+<article>
+<h3><%= @orak.evad %> órarend</h3>
+<p id="notice"><%= notice %></p>
+<% if @orak.photo.exists? then %>
+	<p><%= link_to image_tag (@orak.photo.url(:medium)), (@orak.photo.url(:large)), :name => "kattints a képre" %></p>
+	<% else %>
+	<p> Nincs még kép feltöltve. Kérlek pótold. </p>
+<% end %>
+
+<%= link_to 'Edit', edit_orak_path(@orak) %> |
+<%= link_to 'Back', oraks_path %>
+</article>
+</section>

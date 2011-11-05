@@ -1,0 +1,29 @@
+<section id="left">
+<article>
+<h3>Órarend</h3>
+
+<%= link_to image_tag(@oraks.last.photo.url(:medium)), (@oraks.last.photo.url(:large)) %>
+
+<table>
+  <tr>
+    <th>Archívum</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @oraks.each do |orak| %>
+  <tr>
+    <td><%= orak.evad %></td>
+    <td><%= link_to 'Show', orak %></td>
+    <td><%= link_to 'Edit', edit_orak_path(orak) %></td>
+    <td><%= link_to 'Destroy', orak, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'Új órarend feltöltése', new_orak_path %>
+</article>
+</section>

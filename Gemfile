@@ -12,6 +12,7 @@ gem 'json'
 
 group :development do
    gem 'nifty-generators'
+   gem 'paperclip'
 end
 
 # Gems used only for assets and not required
