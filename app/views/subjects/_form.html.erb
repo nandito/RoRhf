@@ -1,0 +1,33 @@
+<%= form_for(@subject) do |f| %>
+  <% if @subject.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@subject.errors.count, "error") %> prohibited this subject from being saved:</h2>
+
+      <ul>
+      <% @subject.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :Név %><br />
+    <%= f.text_field :name %>
+  </div>
+  <div class="field">
+    <%= f.label :Kód %><br />
+    <%= f.text_field :code %>
+  </div>
+  <div class="field">
+    <%= f.label :Kredit %><br />
+    <%= f.number_field :credit %>
+  </div>
+  <div class="actions">
+    <a href="#">Új tulajdonság hozzáadása</a>
+  </div>
+  <div class="actions">
+    <%= f.submit "Létrehozás", :type => :image, :src => "/assets/submit.png", :class => "subject-submit" %>
+    <%= link_to image_tag("/assets/cancel.png"), subjects_path, :class => "subject-cancel" %>
+  </div>
+<% end %>

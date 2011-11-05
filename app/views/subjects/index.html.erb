@@ -1,0 +1,29 @@
+<section id="left">
+<article>
+<h3>Tantárgyak</h3>
+
+<table>
+  <tr>
+    <th>Név</th>
+    <th>Tárgykód</th>
+    <th>Kredit</th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @subjects.each do |subject| %>
+  <tr>
+    <td class="first-col"><%= link_to subject.name, subject, :class => "subject-name" %></td>
+    <td class="code-col"><%= subject.code %></td>
+    <td class="credit-col"><%= subject.credit %></td>
+    <td><%= link_to 'Edit', edit_subject_path(subject) %></td>
+    <td><%= link_to 'Destroy', subject, :confirm => 'Biztos vagy benne?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'Új tárgy hozzáadása', new_subject_path , :class => "add-new-subject" %>
+</article>
+</section>

@@ -1,0 +1,19 @@
+<section id="left">
+<article>
+<h3>Bejelentkezés</h3>
+
+<p>Nincs felhasználói fiókod? <%= link_to "Regisztrálj!", signup_path %></p>
+
+<%= form_tag sessions_path do %>
+  <p>
+    <%= label_tag :login, "felhasználónév vagy e-mail cím:" %><br />
+    <%= text_field_tag :login, params[:login] %>
+  </p>
+  <p>
+    <%= label_tag :password, "jelszó:" %><br />
+    <%= password_field_tag :password %>
+  </p>
+  <p><%= submit_tag "Bejelentkezés" %></p>
+<% end %>
+</article>
+</section>

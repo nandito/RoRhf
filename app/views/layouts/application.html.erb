@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%= content_for?(:title) ? yield(:title) : "Untitled" %></title>
+    <%= stylesheet_link_tag "application" %>
+    <%= javascript_include_tag :defaults %>
+    <%= csrf_meta_tag %>
+    <%= yield(:head) %>
+  </head>
+  <body>
+<div class="wrap">
+<header>
+	<section id="real">
+	<h1>Tantárgyak</h1>
+	<img src="/assets/header_img.png">
+	</section>
+</header>
+<nav>
+	<ul>
+		<li><%= link_to 'Főoldal', subjects_path %></li>
+		<li><a href="#">Jegyzetek</a></li>
+		<li><a href="#">Átlagszámolás</a></li>
+		<li><a href="#">Órarend</a></li>
+		<li> </li>
+		<li> </li>
+	</ul>
+</nav>
+    <div id="container">
+      <% flash.each do |name, msg| %>
+        <%= content_tag :div, msg, :id => "flash_#{name}" %>
+      <% end %>
+      <%= content_tag :h1, yield(:title) if show_title? %>
+      <%= yield %>
+    
+<section id="right">
+	<article class="login">
+		<div class="title">
+			<h3>bejelentkezés</h3>
+		</div>
+		<!--<form>
+			<label for="name" class="name-label">felhasználó:</label>
+			<input name="name" id="name" type="text" placeholder="user">
+			<label for="password" class="pass-label">jelszó:</label>
+			<input name="password" id="password" type="password" placeholder="pass">
+			<a href="#" class="forgotten-pass">elfelejtett jelszó</a>
+			<input type="submit" value="ok" id="login-ok">
+			<img src="/assets/lakat.png" class="lock">
+		</form>-->
+		<% if @user = current_user %>
+  		   Üdvözöllek <%= current_user.username %>!
+		   <%= link_to "Profil szerkesztése", logout_path %>
+		   <%= link_to "Kijelentkezés", logout_path %>
+		<% else %>
+			<div id="form">
+			<%= form_tag sessions_path do %>
+			  
+			    <%= label_tag :login, "felhasználónév:", :class => "name-label" %>
+			    <%= text_field_tag :login, params[:login], :id => "name" %>
+			  
+			    <%= label_tag :password, "jelszó:", :class => "pass-label"  %>
+			    <%= password_field_tag :password, "", :id => "password" %>
+			  
+			    <%= link_to "Regisztráció", signup_path, :class => "forgotten-pass" %>
+			  <p><%= submit_tag "ok", :id => "login-ok" %></p>
+			<% end %>
+			<img src="/assets/lakat.png" class="lock">			
+			</div>
+		<% end %>
+	</article>
+	<article class="times">
+		<div class="title">
+			<h3>idők</h3>
+		</div>
+		<h4 class="week-counter">x. hét</h4>
+		<progress value="20%" class="progress-bar"></progress>
+		<h4 class="next-stuff-title">következő esemény:</h4>
+		<table class="schedule">
+			<tr>
+				<td>09.26.</td>
+				<td>Ruby házi</td>
+			</tr>
+		</table>
+		<img src="/assets/homokora.png" class="hourglass">
+	</article>
+</section>
+<div class="push"></div>
+</div>
+</div>
+<footer>
+	<p>Készítette <a href="http://www.nandito.info">Bíró Nándor</a> - b7oo1h | 2011. @<a href="http://www.bme.hu">BME</a></p>
+</footer>
+  </body>
+</html>

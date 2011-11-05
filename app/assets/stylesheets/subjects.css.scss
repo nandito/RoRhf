@@ -1,0 +1,71 @@
+// Place all the styles related to the Subjects controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+#left article{
+	position: relative;
+}
+#left article h3{
+	font-size: 28px;
+	font-family: "Rondalo";
+	font-weight: normal;
+}
+table{
+	font-size: 16px;
+}
+.first-coloumn{
+	width: 25px;
+}
+.link-hover-img{
+	width: 22px;
+	height: 22px;
+	display: none;
+}
+.first-col{
+	display: table-cell;
+	height: 35px;
+	min-width: 200px;
+}
+.code-col{
+	min-width: 140px;
+	text-align: center;
+}
+.credit-col{
+	text-align: center;
+}
+.subject-name{
+	padding-left: 25px;
+	display: table-cell;
+	color: #000;
+	text-decoration: none;
+}
+.subject-name:hover{
+	background-image: url('/assets/hover-arrow.png');
+	background-position: top left;
+	background-repeat: no-repeat;
+	padding-left: 25px;
+}
+.add-new-subject{
+	color: #000;
+	text-decoration: none;
+	&:hover{
+	background: #ddd;
+	}
+	&:before{
+	content: '[';
+	}
+	&:after{
+	content: ']';
+	}
+}
+.subject-submit, .subject-cancel img{
+	height: 45px;
+	width: 45px;
+}
+.subject-cancel{
+	border: 0;
+}
+.subject-cancel:hover{
+	text-decoration: none;
+	color: none;
+	background: none;
+}

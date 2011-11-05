@@ -1,0 +1,254 @@
+/*
+ * This is a manifest file that'll automatically include all the stylesheets available in this directory
+ * and any sub-directories. You're free to add application-wide styles to this file and they'll appear at
+ * the top of the compiled file, but it's generally better to create a new file per style scope.
+ *= require_self
+ *= require_tree . 
+*/
+body{
+	background: url('/assets/bg_pattern.png') repeat;
+	margin: 0;
+	padding: 0;
+	font-family: Trebuchet MS, Arial, Helvetica, sans-serif;
+}
+html, body{
+	height: 100%;
+}
+header #real, #container, footer p{
+	width: 960px;
+	margin: 0 auto;
+	position: relative;
+}
+#real{
+	height: 140px;
+}
+/* header */
+@font-face {
+	font-family: "Rondalo";
+	src: url('/assets/Rondalo.eot'); /* IE 5-8 */ 
+	src: local('¢'),             /* sneakily trick IE */
+        url('/assets/Rondalo.woff') format('woff'),    /* FF 3.6, Chrome 5, IE9 */
+        url('/assets/Rondalo.ttf') format('truetype'), /* Opera, Safari */
+        url('/assets/Rondalo.svg#font') format('svg'); /* iOS */
+}
+header{
+	background: url('/assets/header_bg.png') repeat scroll 0 0;
+	height: 140px;
+}
+header h1{
+	font-family: "Rondalo";
+	font-weight: normal;
+	margin: 0;
+	font-size: 72px;
+	color: #006a55;
+	position: absolute;
+	top: 68px;
+	left: 50px;
+}
+header img{
+	position: absolute;
+	top: 50px;
+	left: 480px;
+}
+/* navigation */
+nav{
+	background: url('/assets/menu_bg.png') repeat scroll 0 0;
+	width: 100%;
+}
+nav ul{
+	width: 960px;
+	margin: 0 auto;
+	list-style: none;
+}
+nav ul li{
+	background: #466fd5;
+	display: inline-block;
+	width: 140px;
+	text-align: center;
+	margin: 0 5px;
+	padding: 2px 0;
+}
+nav ul li a{
+	text-decoration: none;
+	color: #2a4380;
+	display: block;
+}
+nav ul li a:hover, nav ul li .active{
+	color: #6c8ad5;
+	background: #2a4380;
+}
+/* content */
+#container{
+	overflow: auto;
+	padding-bottom: 100px;
+}
+.wrap{
+	min-height: 100%;
+	height: 100%;
+	height: auto !important;
+}
+#left{
+	float: left;
+	width: 705px;
+}
+#right{
+	float: right;
+	width: 250px;
+	padding-right: 5px;
+}
+#right .login{
+	background: #ffaa73;
+	color: #a64100;
+	margin-top: 20px;
+	-moz-box-shadow: 0px 0px 5px #555;
+	-webkit-box-shadow: 0px 0px 5px #555;
+	box-shadow: 0px 0px 5px #555;
+	position: relative;
+}
+#right .login .title{
+	background: #ff8b40;
+}
+#right .times .title{
+	background: #5fa92a;
+	color: #87f03c;
+}
+#right .login .title, #right .times .title{
+	width: 100%;
+	height: 27px;
+	margin: 0;
+	padding: 0;
+}
+#right .login .title h3, #right .times .title h3{
+	font-size: 16px;
+	padding: 2px 0 0 8px;
+}
+#right .login #form{
+	margin: 20px 0 0 0;
+	padding: 0 0 10px 0;
+	font-size: 13px;
+	font-weight: bold;
+	position: relative;
+}
+.name-label, .pass-label{
+	display: inline-block;
+	padding-left: 8px;
+}
+.name-label{
+	padding-right: 5px;
+}
+.pass-label{
+	padding-right: 61px;
+}
+#name, #password{
+	padding: 1px;
+	margin: 0 0 15px 0;
+	border: 1px solid #aaa;
+	width: 124px;
+}
+.forgotten-pass{
+	display: block;
+	padding: 0 0 10px 8px;
+	text-decoration: none;
+	color: #a64100;
+}
+.forgotten-pass:before{
+	content: '[';
+}
+.forgotten-pass:after{
+	content: ']'
+}
+.forgotten-pass:hover{
+	color: #c85211;
+}
+#login-ok{
+	background: #bf6830;
+	margin: auto;
+	width: 60px;
+	color: #ffaa73;
+	border: 0;
+	display: block;
+}
+#login-ok:hover{
+	cursor: pointer;
+	background: #a25829;
+}
+.lock, .hourglass{
+	width: 45px;
+	height: 45px;
+	position: absolute;
+}
+.lock{
+	bottom: 8px;
+	right: 8px;
+}
+.hourglass{
+	bottom: 8px;
+	right: 0px;
+}
+#right .times{
+	background: #a3f06c;
+	color: #3d9200;
+	margin-top: 20px;
+	-moz-box-shadow: 0px 0px 5px #555;
+	-webkit-box-shadow: 0px 0px 5px #555;
+	box-shadow: 0px 0px 5px #555;
+	position: relative;
+}
+.week-counter{
+	font-size: 21px;
+}
+.week-counter, .next-stuff-title{
+	padding-left: 8px;
+	margin: 12px 0 7px 0;
+	display: block;
+	font-weight: normal;
+}
+.progress-bar{
+	width: 230px;
+	margin: 0 auto;
+	display: block;
+	height: 25px;
+}
+.schedule{
+	display: block;
+	padding: 0 0 10px 8px;
+	font-size: 13px;
+}
+.error-pic{
+	position: absolute;
+	right: 80px;
+	top: 10px;
+	height: 120px;
+	width: 120px;
+}
+.error-msg{
+	max-width: 500px;
+}
+
+/* footer */
+footer{
+	background: url('/assets/header_bg.png') repeat scroll 0 0;
+	margin: 20px 0 0 0;
+	text-align: center;
+	overflow: hidden;
+	position: relative;
+}
+.push, footer{
+	clear: both;
+	height: 150px;
+	margin-top: -150px;
+}
+footer p{
+	padding: 20px 0;
+	color: #1f7a68;
+	font-size: 13px;
+	font-weight: bold;
+	clear: both;
+}
+footer p a{
+	text-decoration: none;
+	color: #1f7a68;
+}
+footer p a:hover{
+	text-decoration: underline;
+}

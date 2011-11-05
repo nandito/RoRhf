@@ -1,0 +1,25 @@
+<section id="left">
+<article>
+<h3>Tárgy részletei</h3>
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Név:</b>
+  <%= @subject.name %>
+</p>
+
+<p>
+  <b>Tárgykód:</b>
+  <%= @subject.code %>
+</p>
+
+<p>
+  <b>Kredit:</b>
+  <%= @subject.credit %>
+</p>
+
+
+<%= link_to 'Edit', edit_subject_path(@subject) %> |
+<%= link_to 'Back', subjects_path %>
+</article>
+</section>
