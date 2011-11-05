@@ -1,3 +1,35 @@
 // Place all the styles related to the average controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+.result{
+	padding-top: 30px;
+}
+.countit{
+	display: block;
+	text-decoration: none;
+	color: #222;
+	font-size: 14px;
+	&:hover{
+		color: #777;
+	}
+	&:before{
+		content: "[";
+	}
+	&:after{
+		content: "]";
+	}
+}
+.result table{
+	margin: 20px 0 0 0;
+	border: 1px solid grey;
+}
+.result table td, .result table th{
+	border: 1px solid grey;
+}
+.result table th{
+	padding: 0 5px;
+}
+.result table td{
+	text-align: center;
+}
