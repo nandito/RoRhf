@@ -11,4 +11,5 @@ class AverageController < ApplicationController
 	
 	render :action => :index
   end
+
 end

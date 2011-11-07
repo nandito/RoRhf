@@ -8,20 +8,22 @@
     <th>Kredit</th>
     <th>Érdemjegy</th>
   </tr>
+<%= form_tag('/szamol') do %>
+<% i = 0 %>
 <% @subjects.each do |subject| %>
+<% n = [] %>
   <tr>
     <td class="first-col"><%= subject.name %></td>
     <td class="credit-col"><%= subject.credit %></td>
     <td>
-		<select>
-			<option>1</option>
-			<option>2</option>
-			<option>3</option>
-			<option>4</option>
-			<option>5</option>
-		</select>
+		<%= select_tag(:f, options_for_select([['1',1],['2',2],['3',3],['4',4], ['5',5]])) %>
 	</td>
   </tr>
+<% i = i+1%>
+
+<% end %>
+<%= text_field_tag(:r, @result, :disabled => true) %>
+<%= submit_tag("Számold") %>
 <% end %>
 
 </table>
@@ -49,15 +51,9 @@
 
 </div>
 <div>
-<%= form_tag('/szamol') do %>
-	<%= select_tag(:f, options_for_select([['1',1],['2',2],['3',3],['4',4], ['5',5]])) %>
-	<%= label_tag(:f, "First") %><br />
-	<%= text_field_tag(:s) %>
-	<%= label_tag(:s, "Second") %><br />
-	<%= text_field_tag(:r, @result, :disabled => true) %>
 
-	<%= submit_tag("Számold") %>
-<% end %>
+	
+	
 </div>
 
 </article>

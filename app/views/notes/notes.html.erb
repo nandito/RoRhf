@@ -1,0 +1,15 @@
+<section id="left">
+<article>
+<h3>Jegyzetek</h3>
+<div>
+<%= form_tag ({:action => 'uploadFile'},
+						:multipart => true) do %>
+	<p>
+		<label for="upload_file">Fájl kiválasztása</label>
+		<%= file_field 'upload', 'datafile' %>
+	</p>
+	<%= submit_tag "Feltöltés" %>
+<% end %>
+</div>
+</article>
+</section>
