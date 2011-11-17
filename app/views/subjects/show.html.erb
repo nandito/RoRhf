@@ -19,7 +19,7 @@
 </p>
 
 
-<%= link_to 'Edit', edit_subject_path(@subject) %> |
-<%= link_to 'Back', subjects_path %>
+<% if @user = current_user %><%= link_to 'Szerkesztés', edit_subject_path(@subject) %> |
+<% end %><%= link_to 'Vissza', subjects_path %>
 </article>
 </section>

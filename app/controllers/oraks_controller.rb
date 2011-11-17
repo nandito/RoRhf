@@ -1,6 +1,9 @@
 class OraksController < ApplicationController
   # GET /oraks
   # GET /oraks.json
+
+before_filter :login_required, :except => [:index, :show]
+
   def index
     @oraks = Orak.all
 

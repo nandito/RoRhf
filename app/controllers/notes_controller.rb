@@ -1,4 +1,7 @@
 class NotesController < ApplicationController
+
+  before_filter :login_required, :except => [:index]
+
   def index
 	render :file => 'app/views/notes/notes.html.erb'
   end
