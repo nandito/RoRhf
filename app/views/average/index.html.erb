@@ -11,13 +11,13 @@
 <%= form_tag('/szamol') do %>
 <% i = 0 %>
 <% @subjects.each do |subject| %>
-<% n = [] %>
   <tr>
     <td class="first-col"><%= subject.name %></td>
     <td class="credit-col"><%= subject.credit %></td>
     <td>
-		<%= select_tag(:f, options_for_select([['1',1],['2',2],['3',3],['4',4], ['5',5]])) %>
+		<%= select_tag(i.to_i, options_for_select([['1',1],['2',2],['3',3],['4',4], ['5',5]])) %>
 	</td>
+	<td><%= i %></td>
   </tr>
 <% i = i+1%>
 
